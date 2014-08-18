@@ -1,0 +1,33 @@
+Archivos incluidos en el Directorio:
+
+- Directorio Auxiliares:
+  - Ajuste_temperatura.odc: Documento en formato LibreOffie para el cálculo de la función de transferencia de la temperatura al elemento captador.
+  - *.brm: Archivos de ejemplo para testear el programa con el ordenador.
+  
+- Directorio Electrónica:
+  - Esquema electrónico en pdf y archivos en formato KiCAD. Prestar especial atención a la conexión a masa del equipo.
+  
+- Directorio Software:
+  - Programa de control del equipo. Esta versión permite ejecutarse en un ordenador, lo que permite depurar el programa y ejecutarlo sin necesidad de estar conectado a la BeagleBone. Hay que crear un archivo de texto en directorio "/mnt/RAMDisk/Temperature", en el que se escribe manualmente el valor de la temperatura simulada. En equipos con Windows, hay que cambiar el nombre del directorio así como hacerlo coincidir con el software.
+ 
+ - Readme.txt:
+  - Términos de la licencia.
+  
+- SD_Image_1.0.gz: Imágen del sistema operativo de la BeagleBone
+  
+=================================================================================================
+
+Instalación.
+
+  1. En primer lugar grabaremos el archivo SD_Image_1.0.gz en una tarjeta SD/MMC.
+  2. Con la BeagleBone conectada a una pantalla y un teclado, abrimos una consola ("ATL+F1"), e introducimos el nombre de usuario y contraseña (dato proporcianado en las líneas de inicio al abrir la consola).
+  3. Introducir la tarjeta SD/MMC en la BeagleBone y en consola teclear "sudo mount /mnt/mmcblk1p1" pedirá la contraseña que es la misma que antes.
+  4. teclear "sudo zcat SD_Image_1.0.gz > /dev/mmcblk0"
+  
+  Y ya está, retirar la tarjeta SD y reiniciar la BeagleBone. el Software está instalado.
+  
+  Conectar la electrónica como se indica en el esquema y a funcionar.
+  
+ 17/08/2014 - Este tutorial se irá ampliando y detallando en un futuro.
+ 
+
